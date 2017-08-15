@@ -26,7 +26,7 @@ namespace Library.BLL.Services
                 Id = item.Id,
                 Author = item.Author,
                 Name = item.Name,
-                YearOfPublishing_ = item.YearOfPublishing_
+                YearOfPublishing = item.YearOfPublishing
             };
             bookRepository.Create(book);
         }
@@ -37,12 +37,12 @@ namespace Library.BLL.Services
             List<BookViewModel> bookVMs = new List<BookViewModel>();
             foreach (Book item in books) //TODO: automaper
             {
-                CreateBookViewModel bookVM = new CreateBookViewModel
+                BookViewModel bookVM = new BookViewModel
                 {
                     Id = item.Id,
                     Author = item.Author,
                     Name = item.Name,
-                    YearOfPublishing_ = item.YearOfPublishing_
+                    YearOfPublishing = item.YearOfPublishing
                 };
                 bookVMs.Add(bookVM);
             }

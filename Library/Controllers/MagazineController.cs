@@ -1,43 +1,43 @@
-﻿using System.Web.Mvc;
-using Library.BLL.Services;
+﻿using Library.BLL.Services;
 using Library.BLL.ViewModels;
+using System.Web.Mvc;
 
 namespace Library.Controllers
 {
-    public class BookController : Controller
+    public class MagazineController : Controller
     {
-        BookService bookService;
-        public BookController()
+        MagazineService magazineService;
+        public MagazineController()
         {
-            bookService = new BookService();
+            magazineService = new MagazineService();
         }
 
-        // GET: Book
+        // GET: Magazine
         public ActionResult Index()
         {
-            IndexBookViewModel books = bookService.GetAll();
-            return View(books);
+            IndexMagazineViewModel magazines = magazineService.GetAll();
+            return View(magazines);
         }
 
-        // GET: Book/Details/5
+        // GET: Magazine/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Book/Create
+        // GET: Magazine/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Book/Create
+        // POST: Magazine/Create
         [HttpPost]
-        public ActionResult Create(CreateBookViewModel book)
+        public ActionResult Create(CreateMagazineViewModel magazin)
         {
             try
             {
-                bookService.Create(book);
+                magazineService.Create(magazin);
 
                 return RedirectToAction("Index");
             }
@@ -47,13 +47,13 @@ namespace Library.Controllers
             }
         }
 
-        // GET: Book/Edit/5
+        // GET: Magazine/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Book/Edit/5
+        // POST: Magazine/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -69,13 +69,13 @@ namespace Library.Controllers
             }
         }
 
-        // GET: Book/Delete/5
+        // GET: Magazine/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Book/Delete/5
+        // POST: Magazine/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

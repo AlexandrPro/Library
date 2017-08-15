@@ -47,9 +47,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BookService.cs" />
+    <Compile Include="Services\MagazineService.cs" />
     <Compile Include="ViewModels\BookViewModel.cs" />
     <Compile Include="ViewModels\CreateBookViewModel.cs" />
+    <Compile Include="ViewModels\CreateMagazineViewModel.cs" />
     <Compile Include="ViewModels\IndexBookViewModel.cs" />
+    <Compile Include="ViewModels\IndexMagazineViewModel.cs" />
+    <Compile Include="ViewModels\MagazineViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
