@@ -1,12 +1,11 @@
-﻿using Library.DAL.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Library.DAL.Repository
 {
-    public class EFRepository<T> : IRepository<T> where T : class
+    public class EFRepository<T> where T : class
     {
         private readonly DbContext _context;
         private readonly IDbSet<T> _entities;

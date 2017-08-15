@@ -1,19 +1,21 @@
-﻿using Library.BLL.Interfaces;
-using Library.BLL.ViewModels;
-using Library.DAL.Interfaces;
+﻿using Library.BLL.ViewModels;
+using Library.DAL.EF;
 using Library.DAL.Entities;
+using Library.DAL.Repository;
 using System;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services
 {
-    public class BookService : IBookService
+    public class BookService 
     {
-        IUnitOfWork db { get; set; }
+        LibraryContext db;
+        EFRepository<Book> bookRepository;
 
-        public BookService(IUnitOfWork uow)
+        public BookService()
         {
-            db = uow;
+            db = new LibraryContext();
+            bookRepository = new EFRepository<Book>(db);
         }
 
         public void Create(BookVM item)
@@ -26,12 +28,12 @@ namespace Library.BLL.Services
                 Name = item.Name,
                 YearOfPublishing_ = item.YearOfPublishing_
             };
-            db.Books.Create(book);
+            bookRepository.Create(book);
         }
 
         public IEnumerable<BookVM> GetAll()
         {
-            IEnumerable<Book> books = db.Books.GetAll();
+            IEnumerable<Book> books = bookRepository.GetAll();
             List<BookVM> bookVMs = new List<BookVM>();
             foreach (Book item in books) //TODO: automaper
             {

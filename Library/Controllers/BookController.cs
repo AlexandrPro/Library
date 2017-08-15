@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Library.BLL.Interfaces;
 using Library.BLL.Services;
 using Library.BLL.ViewModels;
 
@@ -11,10 +10,10 @@ namespace Library.Controllers
 {
     public class BookController : Controller
     {
-        IBookService bookService;
-        public BookController(IBookService bService)
+        BookService bookService;
+        public BookController()
         {
-            bookService = bService;
+            bookService = new BookService();
         }
 
         // GET: Book
