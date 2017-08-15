@@ -18,7 +18,7 @@ namespace Library.BLL.Services
             bookRepository = new EFRepository<Book>(db);
         }
 
-        public void Create(BookVM item)
+        public void Create(CreateBookViewModel item)
         {
             //TODO: validation
             Book book = new Book //TODO: automaper
@@ -31,13 +31,13 @@ namespace Library.BLL.Services
             bookRepository.Create(book);
         }
 
-        public IEnumerable<BookVM> GetAll()
+        public IndexBookViewModel GetAll()
         {
             IEnumerable<Book> books = bookRepository.GetAll();
-            List<BookVM> bookVMs = new List<BookVM>();
+            List<BookViewModel> bookVMs = new List<BookViewModel>();
             foreach (Book item in books) //TODO: automaper
             {
-                BookVM bookVM = new BookVM
+                CreateBookViewModel bookVM = new CreateBookViewModel
                 {
                     Id = item.Id,
                     Author = item.Author,
@@ -47,7 +47,7 @@ namespace Library.BLL.Services
                 bookVMs.Add(bookVM);
             }
 
-            return bookVMs;
+            return new IndexBookViewModel { books = bookVMs };
         }
     }
 }

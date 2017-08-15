@@ -24,7 +24,7 @@ namespace Library.DAL.Repository
 
         public void Delete(int id)
         {
-            var entity = Get(id);
+            var entity = GetById(id);
             if (entity != null)
                 _entities.Remove(entity);
             _context.SaveChanges();
@@ -41,7 +41,7 @@ namespace Library.DAL.Repository
             return _entities.Where(predicate).ToList();
         }
 
-        public T Get(int id)
+        public T GetById(int id)
         {
             return _entities.Find(id);
         }

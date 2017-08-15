@@ -19,7 +19,7 @@ namespace Library.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            IEnumerable<BookVM> books = bookService.GetAll();
+            IndexBookViewModel books = bookService.GetAll();
             return View(books);
         }
 
@@ -37,7 +37,7 @@ namespace Library.Controllers
 
         // POST: Book/Create
         [HttpPost]
-        public ActionResult Create(BookVM book)
+        public ActionResult Create(CreateBookViewModel book)
         {
             try
             {
