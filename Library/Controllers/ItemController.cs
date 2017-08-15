@@ -1,5 +1,5 @@
 ﻿using Library.BLL.Services;
-using Library.BLL.ViewModels;
+using Library.Shared.ViewModels.Item;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4E3F4A0-BC25-4D45-B82A-97D607FE0F17}</ProjectGuid>
+    <ProjectGuid>{581D489C-A446-4434-A8A8-D325075CACCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Library.BLL</RootNamespace>
-    <AssemblyName>Library.BLL</AssemblyName>
+    <RootNamespace>Library.Shared</RootNamespace>
+    <AssemblyName>Library.Shared</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -45,23 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Book.cs" />
+    <Compile Include="Entities\Magazine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BookService.cs" />
-    <Compile Include="Services\ItemService.cs" />
-    <Compile Include="Services\MagazineService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Library.DAL\Library.DAL.csproj">
-      <Project>{215d9aff-2a47-4812-876a-7eecc27d2eb4}</Project>
-      <Name>Library.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Shared\Library.Shared.csproj">
-      <Project>{581d489c-a446-4434-a8a8-d325075cacce}</Project>
-      <Name>Library.Shared</Name>
-    </ProjectReference>
+    <Compile Include="ViewModels\Book\CreateBookViewModel.cs" />
+    <Compile Include="ViewModels\Magazine\CreateMagazineViewModel.cs" />
+    <Compile Include="ViewModels\Book\IndexBookViewModel.cs" />
+    <Compile Include="ViewModels\Item\IndexItemViewModel.cs" />
+    <Compile Include="ViewModels\Magazine\IndexMagazineViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

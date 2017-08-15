@@ -1,11 +1,10 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Library.DAL.Entities
+namespace Library.Shared.ViewModels.Magazine
 {
-    [Table("Magazine")]
-    public class Magazine
+    public class CreateMagazineViewModel 
     {
         public int Id { get; set; }
 

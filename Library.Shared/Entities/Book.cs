@@ -1,14 +1,12 @@
-namespace Library.DAL.Entities
+namespace Library.Shared.Entities
 {
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Book")]
-    public partial class Book
+    public partial class Book : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [StringLength(200)]
         public string Author { get; set; }

@@ -1,13 +1,12 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace Library.BLL.ViewModels
+namespace Library.Shared.Entities
 {
-    public class MagazineViewModel
+    [Table("Magazine")]
+    public class Magazine : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [StringLength(100)]
         public string Name { get; set; }

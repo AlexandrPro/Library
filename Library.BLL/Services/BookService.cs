@@ -1,7 +1,7 @@
-﻿using Library.BLL.ViewModels;
-using Library.DAL.EF;
-using Library.DAL.Entities;
+﻿using Library.DAL.EF;
 using Library.DAL.Repository;
+using Library.Shared.Entities;
+using Library.Shared.ViewModels.Book;
 using System;
 using System.Collections.Generic;
 
@@ -10,12 +10,12 @@ namespace Library.BLL.Services
     public class BookService 
     {
         LibraryContext db;
-        EFRepository<Book> bookRepository;
+        BookRepository bookRepository;
 
         public BookService()
         {
             db = new LibraryContext();
-            bookRepository = new EFRepository<Book>(db);
+            bookRepository = new BookRepository(db);
         }
 
         public void Create(CreateBookViewModel item)
@@ -34,20 +34,19 @@ namespace Library.BLL.Services
         public IndexBookViewModel GetAll()
         {
             IEnumerable<Book> books = bookRepository.GetAll();
-            List<BookViewModel> bookVMs = new List<BookViewModel>();
+            IndexBookViewModel bookVM = new IndexBookViewModel();
             foreach (Book item in books) //TODO: automaper
             {
-                BookViewModel bookVM = new BookViewModel
+                bookVM.books.Add(new BookViewModel
                 {
                     Id = item.Id,
                     Author = item.Author,
                     Name = item.Name,
                     YearOfPublishing = item.YearOfPublishing
-                };
-                bookVMs.Add(bookVM);
+                });
             }
 
-            return new IndexBookViewModel { books = bookVMs };
+            return bookVM;
         }
     }
 }

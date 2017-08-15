@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Library.Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
 namespace Library.DAL.Repository
 {
-    public class EFRepository<T> where T : class
+    public class BaseRepository<T> where T : BaseEntity
     {
         private readonly DbContext _context;
         private readonly IDbSet<T> _entities;
 
-        public EFRepository(DbContext context)
+        public BaseRepository(DbContext context)
         {
             _context = context;
             _entities = context.Set<T>();

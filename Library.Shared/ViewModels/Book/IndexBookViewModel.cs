@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Library.BLL.ViewModels
+namespace Library.Shared.ViewModels.Book
 {
+    public class IndexBookViewModel
+    {
+        public List<BookViewModel> books { get; set; }
+
+        
+    }
+
     public class BookViewModel
     {
-        internal string ItemType;
-
         public int Id { get; set; }
 
         [Required]
@@ -19,4 +25,5 @@ namespace Library.BLL.ViewModels
 
         public DateTime YearOfPublishing { get; set; }
     }
+
 }

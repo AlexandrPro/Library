@@ -1,7 +1,7 @@
-﻿using Library.BLL.ViewModels;
-using Library.DAL.EF;
-using Library.DAL.Entities;
+﻿using Library.DAL.EF;
 using Library.DAL.Repository;
+using Library.Shared.Entities;
+using Library.Shared.ViewModels.Item;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services
@@ -9,13 +9,13 @@ namespace Library.BLL.Services
     public class ItemService
     {
         LibraryContext db;
-        EFRepository<Book> bookRepository;
-        EFRepository<Magazine> magazineRepository;
+        BookRepository bookRepository;
+        MagazineRepository magazineRepository;
         public ItemService()
         {
             db = new LibraryContext();
-            magazineRepository = new EFRepository<Magazine>(db);
-            bookRepository = new EFRepository<Book>(db);
+            magazineRepository = new MagazineRepository(db);
+            bookRepository = new BookRepository(db);
         }
 
         public IndexItemViewModel GetAll()

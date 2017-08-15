@@ -1,5 +1,5 @@
 ﻿using Library.BLL.Services;
-using Library.BLL.ViewModels;
+using Library.Shared.ViewModels.Magazine;
 using System.Web.Mvc;
 
 namespace Library.Controllers

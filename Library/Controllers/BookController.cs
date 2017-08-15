@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using Library.BLL.Services;
-using Library.BLL.ViewModels;
+using Library.Shared.ViewModels.Book;
 
 namespace Library.Controllers
 {

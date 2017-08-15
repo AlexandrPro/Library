@@ -1,7 +1,7 @@
-﻿using Library.BLL.ViewModels;
-using Library.DAL.EF;
-using Library.DAL.Entities;
+﻿using Library.DAL.EF;
 using Library.DAL.Repository;
+using Library.Shared.Entities;
+using Library.Shared.ViewModels.Magazine;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services
@@ -9,11 +9,11 @@ namespace Library.BLL.Services
     public class MagazineService
     {
         LibraryContext db;
-        EFRepository<Magazine> magazineRepository;
+        MagazineRepository magazineRepository;
         public MagazineService()
         {
             db = new LibraryContext();
-            magazineRepository = new EFRepository<Magazine>(db);
+            magazineRepository = new MagazineRepository(db);
         }
 
         public void Create(CreateMagazineViewModel item)
@@ -31,19 +31,19 @@ namespace Library.BLL.Services
         public IndexMagazineViewModel GetAll()
         {
             IEnumerable<Magazine> magazines = magazineRepository.GetAll();
-            List<MagazineViewModel> magazineVMs = new List<MagazineViewModel>();
-            foreach (Magazine item in magazines) //TODO: automaper
+            IndexMagazineViewModel magazineVM = new IndexMagazineViewModel();
+            foreach (Magazine item in magazines) 
             {
-                MagazineViewModel magazineVM = new MagazineViewModel
+                magazineVM.magazines.Add(new MagazineViewModel
                 {
                     Id = item.Id,
                     Name = item.Name,
                     YearOfPublishing = item.YearOfPublishing
-                };
-                magazineVMs.Add(magazineVM);
+                });
+                //magazineVMs.Add(magazineVM);
             }
 
-            return new IndexMagazineViewModel { magazines = magazineVMs };
+            return magazineVM;
         }
     }
 }
