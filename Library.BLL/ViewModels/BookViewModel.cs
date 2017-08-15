@@ -5,6 +5,8 @@ namespace Library.BLL.ViewModels
 {
     public class BookViewModel
     {
+        internal string ItemType;
+
         public int Id { get; set; }
 
         [Required]

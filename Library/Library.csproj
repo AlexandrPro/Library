@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\MagazineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -142,6 +143,7 @@
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Magazine\Index.cshtml" />
     <Content Include="Views\Magazine\Create.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
