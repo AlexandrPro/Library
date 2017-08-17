@@ -32,6 +32,7 @@ namespace Library.BLL.Services
         {
             IEnumerable<Magazine> magazines = magazineRepository.GetAll();
             IndexMagazineViewModel magazineVM = new IndexMagazineViewModel();
+            magazineVM.magazines = new List<MagazineViewModel>();
             foreach (Magazine item in magazines) 
             {
                 magazineVM.magazines.Add(new MagazineViewModel

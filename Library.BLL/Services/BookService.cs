@@ -35,6 +35,7 @@ namespace Library.BLL.Services
         {
             IEnumerable<Book> books = bookRepository.GetAll();
             IndexBookViewModel bookVM = new IndexBookViewModel();
+            bookVM.books = new List<BookViewModel>();
             foreach (Book item in books) //TODO: automaper
             {
                 bookVM.books.Add(new BookViewModel
