@@ -10,8 +10,12 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/kendo/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
+    
     <div class="masthead">
         <h3 class="text-muted">Project name</h3>
         <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
@@ -59,7 +63,7 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

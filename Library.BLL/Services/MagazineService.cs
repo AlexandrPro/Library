@@ -2,6 +2,7 @@
 using Library.DAL.Repository;
 using Library.Shared.Entities;
 using Library.Shared.ViewModels.Magazine;
+using System;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services

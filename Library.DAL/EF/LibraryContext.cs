@@ -12,6 +12,7 @@ namespace Library.DAL.EF
 
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Magazine> Magazines { get; set; }
+        public virtual DbSet<Brochure> Brochures { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

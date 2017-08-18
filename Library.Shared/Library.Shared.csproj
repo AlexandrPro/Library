@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Book.cs" />
+    <Compile Include="Entities\Brochure.cs" />
     <Compile Include="Entities\Magazine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Book\CreateBookViewModel.cs" />
+    <Compile Include="ViewModels\Brochure\CreateBrochureViewModel.cs" />
+    <Compile Include="ViewModels\Brochure\IndexBrochureViewModel.cs" />
     <Compile Include="ViewModels\Magazine\CreateMagazineViewModel.cs" />
     <Compile Include="ViewModels\Book\IndexBookViewModel.cs" />
     <Compile Include="ViewModels\Item\IndexItemViewModel.cs" />

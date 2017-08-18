@@ -1,10 +1,8 @@
 ﻿using Library.BLL.Services;
-using Library.Shared.ViewModels.Item;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
+
 
 namespace Library.Controllers
 {
@@ -18,8 +16,14 @@ namespace Library.Controllers
         // GET: Item
         public ActionResult Index()
         {
-            IndexItemViewModel items = itemService.GetAll();
-            return View(items);
+            //IndexItemViewModel items = itemService.GetAll();
+            //return View(items);
+            return View();
+        }
+
+        public ActionResult Items_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(itemService.GetAll().items.ToDataSourceResult(request));
         }
 
         // GET: Item/Details/5

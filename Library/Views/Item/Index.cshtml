@@ -1,37 +1,27 @@
-﻿@model Library.Shared.ViewModels.Item.IndexItemViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            ItemType
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model.items)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ItemType)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
+@(Html.Kendo().Grid<Library.Shared.ViewModels.Item.ItemViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Name);
+            columns.Bound(c => c.ItemType);
+        })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Items_Read", "Item"))
+            .PageSize(20)
+        )
+)

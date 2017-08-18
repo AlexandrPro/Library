@@ -7,39 +7,26 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Number
-        </th>
-        <th>
-            YearOfPublishing
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model.magazines)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YearOfPublishing)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-
-</table>
-
+@(Html.Kendo().Grid<Library.Shared.ViewModels.Magazine.MagazineViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Name);
+            columns.Bound(c => c.Number);
+            columns.Bound(c => c.YearOfPublishing);
+        })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("Magazines_Read", "Magazine"))
+            .PageSize(20)
+        )
+)

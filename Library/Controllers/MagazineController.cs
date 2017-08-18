@@ -1,4 +1,6 @@
-﻿using Library.BLL.Services;
+﻿using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using Library.BLL.Services;
 using Library.Shared.ViewModels.Magazine;
 using System.Web.Mvc;
 
@@ -15,8 +17,13 @@ namespace Library.Controllers
         // GET: Magazine
         public ActionResult Index()
         {
-            IndexMagazineViewModel magazines = magazineService.GetAll();
-            return View(magazines);
+            //IndexMagazineViewModel magazines = magazineService.GetAll();
+            //return View(magazines);
+            return View();
+        }
+        public ActionResult Magazines_Read([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(magazineService.GetAll().magazines.ToDataSourceResult(request));
         }
 
         // GET: Magazine/Details/5
