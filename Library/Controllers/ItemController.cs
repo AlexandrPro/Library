@@ -21,7 +21,7 @@ namespace Library.Controllers
             return View();
         }
 
-        public ActionResult Items_Read([DataSourceRequest] DataSourceRequest request)
+        public JsonResult Items_Read([DataSourceRequest] DataSourceRequest request)
         {
             return Json(itemService.GetAll().items.ToDataSourceResult(request));
         }

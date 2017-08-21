@@ -2033,9 +2033,9 @@
       <Project>{215d9aff-2a47-4812-876a-7eecc27d2eb4}</Project>
       <Name>Library.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Library.Shared\Library.Shared.csproj">
-      <Project>{581d489c-a446-4434-a8a8-d325075cacce}</Project>
-      <Name>Library.Shared</Name>
+    <ProjectReference Include="..\Library.ViewModel\Library.ViewModel.csproj">
+      <Project>{614fe813-fe73-49b9-acf7-5c2a7d2312b4}</Project>
+      <Name>Library.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

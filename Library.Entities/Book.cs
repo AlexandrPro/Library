@@ -1,4 +1,4 @@
-namespace Library.Shared.Entities
+namespace Library.Entities
 {
     using System;
     using System.ComponentModel.DataAnnotations;

@@ -1,7 +1,7 @@
 namespace Library.DAL.EF
 {
     using System.Data.Entity;
-    using Library.Shared.Entities;
+    using Library.Entities;
 
     public partial class LibraryContext : DbContext
     {

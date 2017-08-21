@@ -1,4 +1,4 @@
-﻿using Library.Shared.Entities;
+﻿using Library.Entities;
 using System.Data.Entity;
 
 namespace Library.DAL.Repository

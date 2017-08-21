@@ -1,8 +1,7 @@
 ﻿using Library.DAL.EF;
 using Library.DAL.Repository;
-using Library.Shared.Entities;
-using Library.Shared.ViewModels.Brochure;
-using System;
+using Library.Entities;
+using Library.ViewModel.Brochure;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services

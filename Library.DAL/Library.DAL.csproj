@@ -81,9 +81,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library.Shared\Library.Shared.csproj">
-      <Project>{581d489c-a446-4434-a8a8-d325075cacce}</Project>
-      <Name>Library.Shared</Name>
+    <ProjectReference Include="..\Library.Entities\Library.Entities.csproj">
+      <Project>{e7a9873b-5b26-4cb5-82b7-3fe156daa52a}</Project>
+      <Name>Library.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

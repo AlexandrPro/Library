@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Library.Shared.ViewModels.Magazine
+namespace Library.ViewModel.Magazine
 {
-    public class IndexMagazineViewModel
-    {
-        public List<MagazineViewModel> magazines { get; set; }
-    }
-
-    public class MagazineViewModel
+    public class CreateMagazineViewModel 
     {
         public int Id { get; set; }
 

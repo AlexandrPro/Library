@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Library.Shared.ViewModels.Book
+namespace Library.ViewModel.Book
 {
-    public class CreateBookViewModel 
+    public class IndexBookViewModel
+    {
+        public List<BookViewModel> books { get; set; }
+
+        
+    }
+
+    public class BookViewModel
     {
         public int Id { get; set; }
 
@@ -17,4 +25,5 @@ namespace Library.Shared.ViewModels.Book
 
         public DateTime YearOfPublishing { get; set; }
     }
+
 }

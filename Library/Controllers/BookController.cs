@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
 using Library.BLL.Services;
-using Library.Shared.ViewModels.Book;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
+using Library.ViewModel.Book;
 
 namespace Library.Controllers
 {
@@ -21,7 +21,7 @@ namespace Library.Controllers
             //return View(books);
             return View();
         }
-        public ActionResult Books_Read([DataSourceRequest] DataSourceRequest request)
+        public JsonResult Books_Read([DataSourceRequest] DataSourceRequest request)
         {
             return Json(bookService.GetAll().books.ToDataSourceResult(request));
         }

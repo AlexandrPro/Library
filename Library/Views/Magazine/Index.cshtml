@@ -1,4 +1,4 @@
-﻿@model Library.Shared.ViewModels.Magazine.IndexMagazineViewModel
+﻿@model Library.ViewModel.Magazine.IndexMagazineViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@(Html.Kendo().Grid<Library.Shared.ViewModels.Magazine.MagazineViewModel>()
+@(Html.Kendo().Grid<Library.ViewModel.Magazine.MagazineViewModel>()
         .Name("grid")
         .Columns(columns =>
         {

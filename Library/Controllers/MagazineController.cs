@@ -1,8 +1,8 @@
 ﻿using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 using Library.BLL.Services;
-using Library.Shared.ViewModels.Magazine;
 using System.Web.Mvc;
+using Library.ViewModel.Magazine;
 
 namespace Library.Controllers
 {
@@ -21,7 +21,7 @@ namespace Library.Controllers
             //return View(magazines);
             return View();
         }
-        public ActionResult Magazines_Read([DataSourceRequest] DataSourceRequest request)
+        public JsonResult Magazines_Read([DataSourceRequest] DataSourceRequest request)
         {
             return Json(magazineService.GetAll().magazines.ToDataSourceResult(request));
         }

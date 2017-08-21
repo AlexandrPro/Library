@@ -1,7 +1,7 @@
 ﻿using Library.DAL.EF;
 using Library.DAL.Repository;
-using Library.Shared.Entities;
-using Library.Shared.ViewModels.Book;
+using Library.Entities;
+using Library.ViewModel.Book;
 using System;
 using System.Collections.Generic;
 

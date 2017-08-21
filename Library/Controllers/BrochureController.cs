@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
 using Library.BLL.Services;
-using Library.Shared.ViewModels.Brochure;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
+using Library.ViewModel.Brochure;
 
 namespace Library.Controllers
 {
@@ -19,7 +19,7 @@ namespace Library.Controllers
         {
             return View();
         }
-        public ActionResult Brochures_Read([DataSourceRequest] DataSourceRequest request)
+        public JsonResult Brochures_Read([DataSourceRequest] DataSourceRequest request)
         {
             return Json(brochureSerivice.GetAll().brochures.ToDataSourceResult(request));
         }

@@ -1,7 +1,7 @@
 ﻿using Library.DAL.EF;
 using Library.DAL.Repository;
-using Library.Shared.Entities;
-using Library.Shared.ViewModels.Item;
+using Library.Entities;
+using Library.ViewModel.Item;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services

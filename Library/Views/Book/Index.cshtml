@@ -1,5 +1,4 @@
-﻿@model Library.Shared.ViewModels.Book.IndexBookViewModel
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
@@ -10,7 +9,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@(Html.Kendo().Grid<Library.Shared.ViewModels.Book.BookViewModel>()
+@(Html.Kendo().Grid<Library.ViewModel.Book.BookViewModel>()
         .Name("grid")
         .Columns(columns =>
         {
