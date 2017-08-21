@@ -6,8 +6,9 @@ namespace Library.ViewModel.Brochure
 {
     public class CreateBrochureViewModel
     {
-        public int Id { get; set; }
-        
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
+
         [Required]
         [StringLength(200)]
         public string Name { get; set; }

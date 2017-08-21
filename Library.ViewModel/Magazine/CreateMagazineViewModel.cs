@@ -6,7 +6,8 @@ namespace Library.ViewModel.Magazine
 {
     public class CreateMagazineViewModel 
     {
-        public int Id { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(100)]

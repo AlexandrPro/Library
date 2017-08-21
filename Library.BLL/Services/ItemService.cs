@@ -26,6 +26,7 @@ namespace Library.BLL.Services
             IEnumerable<Magazine> magazines = magazineRepository.GetAll();
             IEnumerable<Brochure> brochures = brochureRepository.GetAll();
             List<ItemViewModel> itemVMs = new List<ItemViewModel>();
+            /*
             int i = 0;
             foreach (var item in books) 
             {
@@ -57,7 +58,7 @@ namespace Library.BLL.Services
                 };
                 itemVMs.Add(itemVM);
             }
-
+            */
 
             return new IndexItemViewModel { items = itemVMs };
         }

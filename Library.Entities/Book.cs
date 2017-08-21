@@ -15,7 +15,7 @@ namespace Library.Entities
         [StringLength(200)]
         public string Name { get; set; }
 
-        [Column("YearOfPublishing", TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime YearOfPublishing { get; set; }
     }
 }
