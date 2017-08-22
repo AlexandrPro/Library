@@ -2,6 +2,7 @@
 using Library.DAL.Repository;
 using Library.Entities;
 using Library.ViewModel.Magazine;
+using System;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services
@@ -10,10 +11,13 @@ namespace Library.BLL.Services
     {
         LibraryContext db;
         MagazineRepository magazineRepository;
+        PublicationRepository publicationRepository;
+
         public MagazineService()
         {
             db = new LibraryContext();
             magazineRepository = new MagazineRepository(db);
+            publicationRepository = new PublicationRepository(db);
         }
 
         public void Create(CreateMagazineViewModel item)
@@ -21,11 +25,21 @@ namespace Library.BLL.Services
             //TODO: validation
             Magazine magazine = new Magazine //TODO: automaper
             {
-                Id = item.Id,
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
                 Name = item.Name,
                 YearOfPublishing = item.YearOfPublishing
             };
             magazineRepository.Create(magazine);
+
+            Publication publication = new Publication
+            {
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
+                Name = item.Name,
+                Type = "Magazine"
+            };
+            publicationRepository.Create(publication);
         }
 
         public IndexMagazineViewModel GetAll()

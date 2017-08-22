@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Library.ViewModel.Item
+namespace Library.ViewModel.Publication
 {
-    public class IndexItemViewModel
+    public class IndexPublicationViewModel
     {
-        public List<ItemViewModel> items { get; set; }
+        public List<PublicationViewModel> publications { get; set; }
     }
 
-    public class ItemViewModel
+    public class PublicationViewModel
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public Guid Id { get; set; }
@@ -21,6 +21,6 @@ namespace Library.ViewModel.Item
 
         [Required]
         [StringLength(50)]
-        public string ItemType { get; set; }
+        public string Type { get; set; }
     }
 }

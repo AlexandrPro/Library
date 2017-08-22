@@ -4,12 +4,12 @@
 
 <h2>Index</h2>
 
-@(Html.Kendo().Grid<Library.ViewModel.Item.ItemViewModel>()
+@(Html.Kendo().Grid<Library.ViewModel.Publication.PublicationViewModel>()
         .Name("grid")
         .Columns(columns =>
         {
             columns.Bound(c => c.Name);
-            columns.Bound(c => c.ItemType);
+            columns.Bound(c => c.Type);
         })
         .HtmlAttributes(new { style = "height: 550px;" })
         .Scrollable()
@@ -21,7 +21,7 @@
             .ButtonCount(5))
         .DataSource(dataSource => dataSource
             .Ajax()
-            .Read(read => read.Action("Items_Read", "Item"))
+            .Read(read => read.Action("Publications_Read", "Publication"))
             .PageSize(20)
         )
 )

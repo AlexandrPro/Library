@@ -1393,7 +1393,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BrochureController.cs" />
-    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\MagazineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1406,11 +1406,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Magazine\Index.cshtml" />
-    <Content Include="Views\Magazine\Create.cshtml" />
-    <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Publication\Index.cshtml" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.af-ZA.min.js.map" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.af.min.js.map" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.am-ET.min.js.map" />
@@ -2018,8 +2016,10 @@
     <Content Include="Scripts\kendo\messages\kendo.messages.zh-CN.min.js.map" />
     <Content Include="Scripts\kendo\messages\kendo.messages.zh-HK.min.js.map" />
     <Content Include="Scripts\kendo\messages\kendo.messages.zh-TW.min.js.map" />
-    <Content Include="Views\Brochure\Create.cshtml" />
     <Content Include="Views\Brochure\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Brochure\Create.cshtml" />
+    <Content Include="Views\Magazine\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

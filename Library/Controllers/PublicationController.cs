@@ -6,12 +6,12 @@ using Kendo.Mvc.UI;
 
 namespace Library.Controllers
 {
-    public class ItemController : Controller
+    public class PublicationController : Controller
     {
-        ItemService itemService;
-        public ItemController()
+        PublicationService publicationService;
+        public PublicationController()
         {
-            itemService = new ItemService();
+            publicationService = new PublicationService();
         }
         // GET: Item
         public ActionResult Index()
@@ -21,9 +21,9 @@ namespace Library.Controllers
             return View();
         }
 
-        public JsonResult Items_Read([DataSourceRequest] DataSourceRequest request)
+        public JsonResult Publications_Read([DataSourceRequest] DataSourceRequest request)
         {
-            return Json(itemService.GetAll().items.ToDataSourceResult(request));
+            return Json(publicationService.GetAll().publications.ToDataSourceResult(request));
         }
 
         // GET: Item/Details/5

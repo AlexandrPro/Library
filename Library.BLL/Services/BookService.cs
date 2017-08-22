@@ -11,11 +11,13 @@ namespace Library.BLL.Services
     {
         LibraryContext db;
         BookRepository bookRepository;
+        PublicationRepository publicationRepository;
 
         public BookService()
         {
             db = new LibraryContext();
             bookRepository = new BookRepository(db);
+            publicationRepository = new PublicationRepository(db);
         }
 
         public void Create(CreateBookViewModel item)
@@ -23,12 +25,22 @@ namespace Library.BLL.Services
             //TODO: validation
             Book book = new Book //TODO: automaper
             {
-                Id = item.Id,
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
                 Author = item.Author,
                 Name = item.Name,
                 YearOfPublishing = item.YearOfPublishing
             };
             bookRepository.Create(book);
+
+            Publication publication = new Publication
+            {
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
+                Name = item.Name,
+                Type = "Book"
+            };
+            publicationRepository.Create(publication);
         }
 
         public IndexBookViewModel GetAll()

@@ -2,6 +2,7 @@
 using Library.DAL.Repository;
 using Library.Entities;
 using Library.ViewModel.Brochure;
+using System;
 using System.Collections.Generic;
 
 namespace Library.BLL.Services
@@ -10,11 +11,13 @@ namespace Library.BLL.Services
     {
         LibraryContext db;
         BrochureRepository brochureRepository;
+        PublicationRepository publicationRepository;
 
         public BrochureService()
         {
             db = new LibraryContext();
             brochureRepository = new BrochureRepository(db);
+            publicationRepository = new PublicationRepository(db);
         }
 
         public void Create(CreateBrochureViewModel item)
@@ -22,12 +25,22 @@ namespace Library.BLL.Services
             //TODO: validation
             Brochure broshure = new Brochure //TODO: automaper
             {
-                Id = item.Id,
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
                 Name = item.Name,
                 TypeOfCover = item.TypeOfCover,
                 NumberOfPages = item.NumberOfPages
             };
             brochureRepository.Create(broshure);
+
+            Publication publication = new Publication
+            {
+                Id = Guid.NewGuid(),
+                CreationDate = DateTime.Now,
+                Name = item.Name,
+                Type = "Brochure"
+            };
+            publicationRepository.Create(publication);
         }
 
         public IndexBrochureViewModel GetAll()

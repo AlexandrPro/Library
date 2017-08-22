@@ -6,9 +6,6 @@ namespace Library.ViewModel.Magazine
 {
     public class CreateMagazineViewModel 
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid Id { get; set; }
-
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
@@ -16,7 +13,7 @@ namespace Library.ViewModel.Magazine
         [Required]
         public int Number { get; set; }
 
-        [Column("YearOfPublishing", TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime YearOfPublishing { get; set; }
     }
 }

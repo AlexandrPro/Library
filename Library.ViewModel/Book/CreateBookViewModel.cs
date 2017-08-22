@@ -6,9 +6,6 @@ namespace Library.ViewModel.Book
 {
     public class CreateBookViewModel 
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public Guid Id { get; set; }
-
         [Required]
         [StringLength(200)]
         public string Author { get; set; }
@@ -17,6 +14,7 @@ namespace Library.ViewModel.Book
         [StringLength(200)]
         public string Name { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime YearOfPublishing { get; set; }
     }
 }

@@ -49,7 +49,8 @@ namespace Library.Controllers
             }
             catch
             {
-                return View();
+                throw;
+                //return View();
             }
         }
 
