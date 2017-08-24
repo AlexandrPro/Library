@@ -37,7 +37,7 @@ namespace Library.DAL.Repository
             _context.SaveChanges();
         }
 
-        public IEnumerable<T> Find(Func<T, Boolean> predicate)
+        public List<T> Find(Func<T, Boolean> predicate)
         {
             return _entities.Where(predicate).ToList();
         }
